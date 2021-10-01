@@ -32,5 +32,4 @@ _ReSharper*/
 packages/
 
 #Project ignore
-.auth.js
-log/
+.auth.*.js
