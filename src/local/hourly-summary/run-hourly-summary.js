@@ -1,5 +1,9 @@
 {
   loadServerScripts(api);
-  $Summary( active,  active.summary    ).runHourlySummary(Date.now() -  1*3600*1000);
-  $Summary(archive, archive.summary_arc).runHourlySummary(Date.now() - 25*3600*1000);
+  const actSum = $Summary( active,  active.summary    );
+  const arcSum = $Summary(archive, archive.summary_arc);
+  const anHour = 3600*1000;
+
+  actSum.runHourlySummary(Date.now() -  1 * anHour);
+  arcSum.runHourlySummary(Date.now() - 25 * anHour);
 }

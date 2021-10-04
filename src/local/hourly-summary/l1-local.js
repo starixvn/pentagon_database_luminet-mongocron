@@ -1,6 +1,6 @@
 {
   const cwd = process.cwd();
-  process.chdir(`${process.env.HOME}/mongoshrc`);
+  process.chdir(`${process.env.HOME ?? process.env.USERPROFILE}/mongoshrc`);
   load(`.mongoshrc.nodb.js`);
 
   process.chdir(cwd);
