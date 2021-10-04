@@ -3,7 +3,7 @@
   const actSum = $Summary( active,  active.summary    );
   const arcSum = $Summary(archive, archive.summary_arc);
 
-  const todayH = Math.floor(Date.now / 3600*1000);
+  const todayH = Math.floor(Date.now() / 3600*1000);
 
   actSum.runDailySummary((todayH - 24) * 3600*1000);
   arcSum.runDailySummary((todayH - 48) * 3600*1000);
