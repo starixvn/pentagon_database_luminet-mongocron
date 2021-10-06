@@ -6,6 +6,7 @@ port=$2;
 user=$3;
 pass=$4;
 loc=$5;
+limit=$6;
 
 # Prepare time related variables
 date=$(date +'%Y%m%d-%H%M00');
@@ -53,18 +54,26 @@ fi
 
 for i in {2..3}
 do
-    find . -name "*$(date +%Y%m%d -d "$i days ago")-[0-9][0-9][1-9][0-9]00.zip.bak" -exec rm {} +;
+  find . -name "*$(date +%Y%m%d -d "$i days ago")-[0-9][0-9][1-9][0-9]00.zip.bak" -exec rm {} +;
 done
 
 for i in {4..7}
 do
-    find . -name "*$(date +%Y%m%d -d "$i days ago")-[0-9][0-9][1-9][0-9]00.zip.bak" -exec rm {} +;
-    find . -name "*$(date +%Y%m%d -d "$i days ago")-0[^0369][0-9][0-9]00.zip.bak" -exec rm {} +;
-    find . -name "*$(date +%Y%m%d -d "$i days ago")-1[^258][0-9][0-9]00.zip.bak" -exec rm {} +;
-    find . -name "*$(date +%Y%m%d -d "$i days ago")-2[^1][0-9][0-9]00.zip.bak" -exec rm {} +;
+  find . -name "*$(date +%Y%m%d -d "$i days ago")-[0-9][0-9][1-9][0-9]00.zip.bak" -exec rm {} +;
+  find . -name "*$(date +%Y%m%d -d "$i days ago")-0[^0369][0-9][0-9]00.zip.bak" -exec rm {} +;
+  find . -name "*$(date +%Y%m%d -d "$i days ago")-1[^258][0-9][0-9]00.zip.bak" -exec rm {} +;
+  find . -name "*$(date +%Y%m%d -d "$i days ago")-2[^1][0-9][0-9]00.zip.bak" -exec rm {} +;
 done
 
 for i in {8..14}
 do
-    find . -name "*$(date +%Y%m%d -d "$i days ago")-[0-9][0-9][0-9][0-9]00.zip.bak" -exec rm {} +;
+  find . -name "*$(date +%Y%m%d -d "$i days ago")-[0-9][0-9][0-9][0-9]00.zip.bak" -exec rm {} +;
 done
+
+if [[ $limit =~ '^[0-9]+$' ]]
+then
+  for (( i=$limit; i<=14; i++ ))
+  do
+    find . -name "*$(date +%Y%m%d -d "$i days ago")-[0-9][0-9][0-9][0-9][0-9]0.zip.bak" -exec rm {} +;
+  done
+fi
