@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Get parameters
+host=$1;
+port=$2;
+user=$3;
+pass=$4;
+loc=$5;
+
 # Prepare time related variables
 date=$(date +'%Y%m%d-%H%M00');
 min=$(date +'%M');
