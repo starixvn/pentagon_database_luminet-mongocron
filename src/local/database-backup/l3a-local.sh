@@ -3,9 +3,12 @@
 # Define server infomation
 host='10.18.200.80';
 port=47101;
-user='lmn_backup';
-pass='LmnBackup';
 loc='/var/backup/mongodb/l3a';
+
+# Load auth
+if [ -f .local.env ]; then
+  export $(echo $(cat .local.env | sed 's/#.*//g'| xargs) | envsubst)
+fi
 
 # Run backup
 ../../scripts/database-backup/run-backup.sh $host $port $user $pass $loc 2
