@@ -6,7 +6,9 @@ port=37104;
 loc='/var/backup/mongodb/l2p';
 
 # Load auth
-set -o allexport; source .local.env; set +o allexport;
+if [ -f .local.env ]; then
+  export $(echo $(cat .local.env | sed 's/#.*//g'| xargs -d '\r\n') | envsubst)
+fi
 
 # Run backup
 ../../scripts/database-backup/run-backup.sh $host $port $user $pass $loc 2
