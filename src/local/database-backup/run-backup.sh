@@ -74,6 +74,6 @@ if [[ $limit =~ '^[0-9]+$' ]]
 then
   for (( i=$limit; i<=14; i++ ))
   do
-    find . -name "*$(date +%Y%m%d -d "$i days ago")-[0-9][0-9][0-9][0-9][0-9]0.zip.bak" -exec rm {} +;
+    find . -name "*$(date +%Y%m%d -d "$i days ago")-[0-9][0-9][0-9][0-9]00.zip.bak" -exec rm {} +;
   done
 fi
