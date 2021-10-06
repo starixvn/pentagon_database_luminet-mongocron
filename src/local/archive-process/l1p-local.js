@@ -13,5 +13,5 @@
     {env: `biz`   , name: `archive` , auth: null, uri: `mongodb://10.10.50.14:27104/?tls=false&replicaSet=L1pLocal&${appName}`},
   ].forEach(createDatabase);
 
-  load(`run-archive.js`);
+  load(`../../scripts/archive-process/run-archive.js`);
 }

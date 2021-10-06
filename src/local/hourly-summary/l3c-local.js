@@ -13,5 +13,5 @@
     {env: `biz`   , name: `archive` , auth: null, uri: `mongodb://10.18.200.80:47103/?tls=false&replicaSet=L3cLocal&${appName}`},
   ].forEach(createDatabase);
 
-  load(`run-hourly-summary.js`);
+  load(`../../scripts/hourly-summary/run-hourly-summary.js`);
 }

@@ -13,5 +13,5 @@
     {env: `biz`   , name: `archive` , auth: null, uri: `mongodb://10.10.50.13:37104/?tls=false&replicaSet=L2pLocal&appName=${appName}%20Archive`},
   ].forEach(createDatabase);
 
-  load(`run-betlog-summary.js`);
+  load(`../../scripts/betlog-summary/run-betlog-summary.js`);
 }
