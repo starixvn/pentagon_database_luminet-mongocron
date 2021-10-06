@@ -12,4 +12,6 @@
     actSum.runHourlySummary((todayH - 24 + h) * anHour);
     arcSum.runHourlySummary((todayH - 48 + h) * anHour);
   }
+
+  print(`${'='.repeat(100)}\n\n`);
 }

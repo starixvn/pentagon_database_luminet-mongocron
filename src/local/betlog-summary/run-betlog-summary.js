@@ -21,4 +21,6 @@
     arcBLS.runSummary((tohour - 1) * anHour);
     arcBLS.runSummary(tohour * anHour);
   }
+
+  print(`${'='.repeat(100)}\n\n`);
 }
