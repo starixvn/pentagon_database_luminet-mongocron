@@ -6,11 +6,11 @@
   process.chdir(cwd);
   load(`.auth.local.js`);
 
-  const appName = `appName=Summary%20BetLog`;
+  const appName = `Summary%20BetLog`;
   [
     {env: `admin` , name: `api`     , auth: null, uri: `mongodb://10.10.50.12:17104,10.10.50.13:17104,10.10.50.14:17104/?tls=false&replicaSet=AdminAPI&${appName}`},
-    {env: `biz`   , name: `active`  , auth: null, uri: `mongodb://10.18.200.80:47101/?tls=false&replicaSet=L3aLocal&${appName}`},
-    {env: `biz`   , name: `archive` , auth: null, uri: `mongodb://10.18.200.80:47101/?tls=false&replicaSet=L3aLocal&${appName}`},
+    {env: `biz`   , name: `active`  , auth: null, uri: `mongodb://10.18.200.80:47101/?tls=false&replicaSet=L3aLocal&appName=${appName}`},
+    {env: `biz`   , name: `archive` , auth: null, uri: `mongodb://10.18.200.80:47101/?tls=false&replicaSet=L3aLocal&appName=${appName}%20Archive`},
   ].forEach(createDatabase);
 
   load(`run-betlog-summary.js`);
