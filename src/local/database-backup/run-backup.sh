@@ -70,7 +70,8 @@ do
   find . -name "*$(date +%Y%m%d -d "$i days ago")-[0-9][0-9][0-9][0-9]00.zip.bak" -exec rm {} +;
 done
 
-if [[ $limit =~ '^[0-9]+$' ]]
+regex='^[0-9]+$';
+if [[ $limit =~ $regex ]]
 then
   for (( i=$limit; i<=14; i++ ))
   do
