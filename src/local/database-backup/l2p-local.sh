@@ -8,4 +8,4 @@ pass='LmnBackup';
 loc='/var/backup/mongodb/l2p';
 
 # Run backup
-./run-backup.sh $host $port $user $pass $loc 2
+../../scripts/database-backup/run-backup.sh $host $port $user $pass $loc 2
