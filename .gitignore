@@ -34,3 +34,4 @@ packages/
 #Project ignore
 .auth.*.js
 .*.env
+*.lock
