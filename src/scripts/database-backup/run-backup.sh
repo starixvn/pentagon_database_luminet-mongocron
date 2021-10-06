@@ -15,7 +15,7 @@ min=$(date +'%M');
 # Navigate to the backup folder
 if [ ! -d "$loc" ]
 then
-    mkdir $loc;
+    mkdir $loc -p;
 fi
 cd $loc;
 
