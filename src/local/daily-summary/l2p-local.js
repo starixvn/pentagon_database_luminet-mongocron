@@ -6,11 +6,11 @@
   process.chdir(cwd);
   load(`.auth.local.js`);
 
-  const appName = `appName=Summary%20Daily`;
+  const appName = `Summary%20Daily`;
   [
-    {env: `admin` , name: `api`     , auth: null, uri: `mongodb://10.10.50.13:17104,10.10.50.14:17104,10.18.200.80:17104/?tls=false&replicaSet=AdminAPI&${appName}`},
-    {env: `biz`   , name: `active`  , auth: null, uri: `mongodb://10.10.50.13:37104/?tls=false&replicaSet=L2pLocal&${appName}`},
-    {env: `biz`   , name: `archive` , auth: null, uri: `mongodb://10.10.50.13:37104/?tls=false&replicaSet=L2pLocal&${appName}`},
+    {env: `admin` , name: `api`     , auth: null, uri: `mongodb://10.10.50.13:17104,10.10.50.14:17104,10.18.200.80:17104/?tls=false&replicaSet=AdminAPI&appName=${appName}`},
+    {env: `biz`   , name: `active`  , auth: null, uri: `mongodb://10.10.50.13:37104/?tls=false&replicaSet=L2pLocal&appName=${appName}`},
+    {env: `biz`   , name: `archive` , auth: null, uri: `mongodb://10.10.50.13:37104/?tls=false&replicaSet=L2pLocal&appName=${appName}`},
   ].forEach(createDatabase);
 
   load(`../../scripts/daily-summary/run-daily-summary.js`);
