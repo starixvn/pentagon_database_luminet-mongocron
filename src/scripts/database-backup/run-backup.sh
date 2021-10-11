@@ -27,6 +27,7 @@ mongodump   --host=$host \
             --username=$user \
             --password=$pass \
             --authenticationDatabase='admin' \
+            --readPreference='nearest' \
             --db='minigame' \
             --gzip \
             --archive="minigame-$date.zip.bak"
@@ -38,6 +39,7 @@ then
                 --username=$user \
                 --password=$pass \
                 --authenticationDatabase='admin' \
+                --readPreference='nearest' \
                 --db='log' \
                 --gzip \
                 --archive="log-$date.zip.bak"
