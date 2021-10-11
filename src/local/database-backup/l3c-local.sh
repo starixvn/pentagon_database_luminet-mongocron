@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Define server infomation
-host='10.18.200.80';
-port=47103;
+host='L3cLocal/10.18.200.80:47103';
 loc='/var/backup/mongodb/l3c';
 
 # Load auth
@@ -11,4 +10,4 @@ if [ -f .local.env ]; then
 fi
 
 # Run backup
-../../scripts/database-backup/run-backup.sh $host $port $user $pass $loc 2
+../../scripts/database-backup/run-backup.sh $host $user $pass $loc 2

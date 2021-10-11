@@ -2,11 +2,10 @@
 
 # Get parameters
 host=$1;
-port=$2;
-user=$3;
-pass=$4;
-loc=$5;
-limit=$6;
+user=$2;
+pass=$3;
+loc=$4;
+limit=$5;
 
 # Prepare time related variables
 date=$(date +'%Y%m%d-%H%M00');
@@ -25,7 +24,6 @@ cd $loc;
 
 # Backup minigame database - twice per hour
 mongodump   --host=$host \
-            --port=$port \
             --username=$user \
             --password=$pass \
             --authenticationDatabase='admin' \
@@ -37,7 +35,6 @@ mongodump   --host=$host \
 if [ "$min" -lt "10" ]
 then
     mongodump   --host=$host \
-                --port=$port \
                 --username=$user \
                 --password=$pass \
                 --authenticationDatabase='admin' \
