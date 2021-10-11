@@ -1,0 +1,6 @@
+{
+  [
+    {env: `admin` , user: `reader`      , pwd: `#LmnReadonly@8800#` , default: true},
+    {env: `biz`   , user: `lmn_summary` , pwd: `----------`         , default: true},
+  ].forEach(createCredential);
+}
