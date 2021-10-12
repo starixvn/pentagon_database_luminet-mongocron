@@ -1,0 +1,9 @@
+1 * * * * cd /var/crontab/luminet-mongocron-sit-uat/src/uat/archive-process && flock -w 0 lx.lock mongosh --nodb --quiet lx-uat.js >> log/lx-archive.log 2>&1
+
+10 * * * * cd /var/crontab/luminet-mongocron-sit-uat/src/uat/daily-summary && flock -w 0 lx.lock mongosh --nodb --quiet lx-uat.js >> log/lx-summary.log 2>&1
+
+* * * * * cd /var/crontab/luminet-mongocron-sit-uat/src/uat/hourly-summary && flock -w 0 lx.lock mongosh --nodb --quiet lx-uat.js >> log/lx-summary.log 2>&1
+
+* * * * * cd /var/crontab/luminet-mongocron-sit-uat/src/uat/betlog-summary && flock -w 0 lx.lock mongosh --nodb --quiet lx-uat.js >> log/lx-summary.log 2>&1
+
+0,30 * * * * cd /var/crontab/luminet-mongocron-sit-uat/src/uat/database-backup && flock -w 0 lx.lock ./lx-uat.sh >> log/lx-backup.log 2>&1
