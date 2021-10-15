@@ -4,8 +4,9 @@
 host=$1;
 user=$2;
 pass=$3;
-loc=$4;
-limit=$5;
+prefix=$4
+loc=$5;
+limit=$6;
 
 # Prepare time related variables
 date=$(date +'%Y%m%d-%H%M00');
@@ -30,7 +31,7 @@ mongodump   --host=$host \
             --readPreference='nearest' \
             --db='minigame' \
             --gzip \
-            --archive="minigame-$date.zip.bak"
+            --archive="$prefix-minigame-$date.zip.bak"
 
 # Backup log database - once per hour
 if [ "$min" -lt "10" ]
@@ -42,7 +43,7 @@ then
                 --readPreference='nearest' \
                 --db='log' \
                 --gzip \
-                --archive="log-$date.zip.bak"
+                --archive="$prefix-log-$date.zip.bak"
 fi
 
 # Second, clean up old backup files

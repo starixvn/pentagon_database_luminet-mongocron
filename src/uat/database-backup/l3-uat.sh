@@ -2,6 +2,7 @@
 
 # Define server infomation
 host='SabaL3UAT/10.99.99.187:47201';
+prefix='L3';
 loc='/var/backup/mongodb/uat/l3';
 
 # Load auth
@@ -10,4 +11,4 @@ if [ -f .uat.env ]; then
 fi
 
 # Run backup
-../../scripts/database-backup/run-backup.sh $host $user $pass $loc 2
+../../scripts/database-backup/run-backup.sh $host $user $pass $prefix $loc 2
