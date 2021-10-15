@@ -2,6 +2,7 @@
 
 # Define server infomation
 host='L3_SabaMain/10.99.99.53:47101,10.99.99.54:47102,10.99.99.187:47103';
+prefix='SC3';
 loc='/var/backup/mongodb/pro/l3';
 
 # Load auth
@@ -10,4 +11,4 @@ if [ -f .l3.env ]; then
 fi
 
 # Run backup
-../../scripts/database-backup/run-backup.sh $host $user $pass $loc
+../../scripts/database-backup/run-backup.sh $host $user $pass $prefix $loc

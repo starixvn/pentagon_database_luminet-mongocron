@@ -2,6 +2,7 @@
 
 # Define server infomation
 host='L3aLocal/10.18.200.80:47101';
+prefix='L3a';
 loc='/var/backup/mongodb/l3a';
 
 # Load auth
@@ -10,4 +11,4 @@ if [ -f .local.env ]; then
 fi
 
 # Run backup
-../../scripts/database-backup/run-backup.sh $host $user $pass $loc 2
+../../scripts/database-backup/run-backup.sh $host $user $pass $prefix $loc 2
