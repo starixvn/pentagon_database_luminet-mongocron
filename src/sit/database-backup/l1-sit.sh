@@ -2,6 +2,7 @@
 
 # Define server infomation
 host='SabaSIT/10.99.99.187:27301';
+prefix='L1';
 loc='/var/backup/mongodb/sit/l1';
 
 # Load auth
@@ -10,4 +11,4 @@ if [ -f .sit.env ]; then
 fi
 
 # Run backup
-../../scripts/database-backup/run-backup.sh $host $user $pass $loc 2
+../../scripts/database-backup/run-backup.sh $host $user $pass $prefix $loc 2
