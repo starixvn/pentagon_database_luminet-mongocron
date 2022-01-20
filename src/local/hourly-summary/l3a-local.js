@@ -14,4 +14,6 @@
   ].forEach(createDatabase);
 
   load(`../../scripts/hourly-summary/run-hourly-summary.js`);
+
+  quit();
 }
