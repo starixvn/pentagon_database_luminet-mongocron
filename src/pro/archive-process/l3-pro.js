@@ -14,4 +14,6 @@
   ].forEach(createDatabase);
 
   load(`../../scripts/archive-process/run-archive.js`);
+
+  quit();
 }
