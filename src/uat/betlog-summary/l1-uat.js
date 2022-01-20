@@ -14,4 +14,6 @@
   ].forEach(createDatabase);
 
   load(`../../scripts/betlog-summary/run-betlog-summary.js`);
+
+  quit();
 }
