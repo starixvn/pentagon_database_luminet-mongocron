@@ -15,5 +15,5 @@
 
   load(`../../scripts/hourly-summary/run-hourly-summary.js`);
 
-  quit();
+  process.exit();
 }
