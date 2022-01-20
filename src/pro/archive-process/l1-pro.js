@@ -15,5 +15,5 @@
 
   load(`../../scripts/archive-process/run-archive.js`);
 
-  quit();
+  process.exit();
 }
