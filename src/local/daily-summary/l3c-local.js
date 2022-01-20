@@ -14,4 +14,6 @@
   ].forEach(createDatabase);
 
   load(`../../scripts/daily-summary/run-daily-summary.js`);
+
+  quit();
 }
